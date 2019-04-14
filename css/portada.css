@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(../Portada/img/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: unset;
+}
+
+.cont-1 {
+    margin-right: 50px;
+}
+
+.cont-1,
+.cont-2 {
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    margin: auto;
+}
+
+.titulo-h1 {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 4px;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.titulo-h1 h1 {
+    margin: 0px;
+}
+
+.raya {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.descripcion {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.descripcion .desc-1,
+.descripcion .desc-2 {
+    width: 50%;
+    transition: 2s;
+}
+
+.descripcion h2 {
+    color: white;
+    margin: 5px 0px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.descripcion .desc-1 {
+    text-align: right;
+    border-width: 1.5px 1px 1px 0px;
+    border-style: solid;
+    border-color: white;
+    padding-right: 5px;
+}
+
+.descripcion .desc-2 {
+    margin-left: 15%;
+    border-width: 1.5px 0px 1px 1px;
+    border-style: solid;
+    border-color: white;
+    padding-left: 5px;
+}
+
+img {
+    width: 400px;
+    height: 300px;
+    cursor: pointer;
+    margin-bottom: -3.5px;
+    z-index: 1;
+}
+
+figcaption {
+    display: none;
+}
+
+.img {
+    width: 400px;
+    height: 300px;
+    transition: 2s;
+    transition-timing-function: ease-in-out;
+    margin-bottom: -3.5px;
+    z-index: 1;
+}
+
+.imgSalir {
+    width: 550px;
+    height: 425px;
+}
+
+.aumento {
+    width: 550px;
+    height: 425px;
+    transition: 1.3s;
+    transition-timing-function: ease-in-out;
+
+}
+
+.desaparecer {
+    display: none !important;
+}
+
+.total {
+    margin-right: 0;
+}
+
+.login {
+    position: absolute;
+    z-index: -2;
+    background-color: rgba(47, 99, 176, 0.9);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    -webkit-box-shadow: -1.5px 0px 5px 1.5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: -1.5px 0px 5px 1.5px rgba(0, 0, 0, 0.4);
+    box-shadow: -1.5px 0px 5px 1.5px rgba(0, 0, 0, 0.4);
+}
+
+.login h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-variant-caps: small-caps;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    padding-right: 2px;
+    padding-left: 4px;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+}
+
+input[type='text'],
+input[type='password'] {
+    border: 0;
+    width: 70% !important;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-indent: 10px;
+    border-width: 1.5px 1.5px 1.5px 0px;
+    border-style: solid;
+    border-color: rgb(51, 76, 113);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    letter-spacing: 4px;
+    color: rgba(47, 99, 176, 0.7);
+    font-weight: bolder;
+    transition: 1.5s;
+}
+
+#error {
+    color: red;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 7%;
+    margin-top: -4%;
+}
+
+.pre-icono {
+    display: flex;
+    flex-direction: row;
+    margin: -6px 0px;
+    justify-content: center;
+}
+
+.icono {
+    background-color: white;
+    display: flex;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-width: 1.5px 1.2px 1.5px 1.5px;
+    border-color: rgb(51, 76, 113);
+    border-style: solid;
+}
+
+.icono-loggin {
+    content: url(../Portada/img/icono_loggin.png);
+}
+
+.icono-password {
+    content: url(../Portada/img/icono_password.png);
+}
+
+.boton {
+    width: 90%;
+    border: 0;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-variant-caps: small-caps;
+    font-weight: 800;
+    display: block;
+    margin: auto;
+    color: white;
+    background-color: rgb(51, 76, 113);
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    border-top-right-radius: 6px;
+}
+
+#entrar {
+    margin-top: 15px;
+}
+
+#salir {
+    margin-bottom: 10px;
+    margin-top: -13px !important;
+}
+
+.boton:hover {
+    transition: 1.5s;
+    letter-spacing: 8px;
+}
+
+.boton:not(:focus) {
+    transition: 1.5s;
+}
+
+figure {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.desc1-up {
+    width: 60% !important;
+    transition: 2s;
+    flex-grow: 0;
+}
+
+.login-up {
+    width: 240px;
+    z-index: 2;
+    display: flex;
+    height: 422px;
+}
+
+.login-zIndex {
+    z-index: -1;
+}
+
+.click-placeholder::placeholder {
+    transition: 1.5s;
+    color: white !important;
+}

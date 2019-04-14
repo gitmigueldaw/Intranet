@@ -1,0 +1,84 @@
+@media only screen and (max-device-width : 480px) {
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+    .raya {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .descripcion {
+        display: none;
+    }
+
+    figcaption {
+        display: block;
+    }
+
+    .titulo-h1 h1 {
+        font-size: 12vw;
+    }
+
+    .cont-1 {
+        margin-right: 0px;
+        flex-grow: 1;
+    }
+
+    .cont-1 .caja {
+        height: 100%;
+        margin-top: 1px;
+    }
+
+    .caja figure {
+        height: 100%;
+        justify-content: flex-end !important;
+        margin-top: 10%;
+    }
+
+    .caja figcaption {
+        text-indent: 1%;
+    }
+
+    .cont-2 {
+        flex-grow: 1;
+        margin-top: 3%;
+        padding-bottom: 5%;
+    }
+
+    .cont-2 .caja2 {
+        height: 100%;
+    }
+
+    .caja2 figure {
+        height: 100%;
+        align-items: flex-start;
+    }
+
+    .caja2 figure figcaption {
+        text-align: right;
+        padding-right: 1%;
+    }
+
+    img {
+        height: 319px !important;
+        width: 100% !important;
+    }
+
+    figure figcaption {
+        color: white;
+        font-size: 5vw;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 2px;
+        border-width: 1px 1px 0px 1px;
+        border-style: solid;
+        border-color: white;
+        width: 70%;
+        margin-top: 1px;
+    }
+
+    .login-up {
+        height: 317px !important;
+        width: 200px !important;
+        margin-top: 7%;
+    }
+
+}
