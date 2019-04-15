@@ -29,7 +29,7 @@
                     <figure>
                         <img src="Portada/img/web1.png" alt="web1">
                         <div class="login">
-                            <h2>Loggin</h2>
+                            <h2>Login</h2>
                             <?php
                                 if (!isset($_POST['login'])) {
                                     ?>
