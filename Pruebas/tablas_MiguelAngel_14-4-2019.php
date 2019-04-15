@@ -52,7 +52,7 @@ if (!mysqli_query($con, $sql)) {
 
 
 $sql = "CREATE TABLE basedatos.anuncios (" .  
-  "id int NOT NULL, " .
+  "id varchar(35) NOT NULL, " .
   "email_vendedor varchar(60) NOT NULL, " .
   "isbn varchar(45) DEFAULT ' - ', " .
   "titulo varchar(45) DEFAULT NULL, " .
