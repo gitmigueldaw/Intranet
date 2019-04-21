@@ -57,7 +57,7 @@ $sql = "CREATE TABLE basedatos.anuncios (" .
   "isbn varchar(45) DEFAULT ' - ', " .
   "titulo varchar(100) DEFAULT NULL, " .
   "editorial varchar(45) DEFAULT NULL, " .
-  "estado varchar(300) DEFAULT NULL, " .
+  "estado varchar(500) DEFAULT NULL, " .
   "precio double DEFAULT NULL, " .
   "rango_libro int NOT NULL, " .
   "fecha date DEFAULT NULL, " .
