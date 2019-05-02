@@ -65,4 +65,5 @@ aquí y lo uso en js_index_logeado.js añadido debajo
 </script>
 
 <!-- Mi javascript -->
+<script src="Alumnos/CVLibros/_javascript/ajuste_estilo_base.js" type="text/javascript"></script> 
 <script src="Alumnos/CVLibros/_javascript/js_index_logeado.js" type="text/javascript"></script> 

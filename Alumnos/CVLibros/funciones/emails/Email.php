@@ -21,7 +21,7 @@ class Email {
 
     function __construct($destinatario, $asunto, $cuerpo_mensaje, $adjunto = null) {
         $this->email_remitente = 'iesetgmadrid@gmail.com';
-        $this->clave_remitente = 'qrmytjavfdzukfzx';
+        $this->clave_remitente = 'aglqyp160';
         $this->nombre_remitente = 'App venta de libros';
         $this->servidor_correo = 'smtp.gmail.com';
         $this->destinatario = $destinatario;
@@ -65,11 +65,9 @@ class Email {
     public function getResultado() {
         return $this->resultado;
     }
-
 }
 
-//
-//$mail = new Email('destinatario@loquesea.com', 'Este es el asunto', '<h2>Cuerpo del mensaje</h2>');
+//$mail = new Email('pichake1985@gmail.com', 'Este es el asunto', '<h2>Cuerpo del mensaje</h2>');
 //
 //$mail->mandar_correo();
 //echo $mail->getResultado();

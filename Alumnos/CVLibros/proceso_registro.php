@@ -62,7 +62,7 @@ if (isset($_POST['correo'])) {
 
 
         $mail = new Email($mail, 'Se ha creado su cuenta de vendedor.', $cuerpo);     
-       // $mail->mandar_correo();
+        $mail->mandar_correo();
 
         if ($mail->getResultado()) {
             echo "<script>document.location.href='../../index.php?alu_com&registroOKmailOK';</script>";

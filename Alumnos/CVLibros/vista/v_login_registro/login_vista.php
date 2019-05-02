@@ -45,6 +45,7 @@
 </script>     
 
 <!-- Mi javascript -->
-<script src="Alumnos/CVLibros/_javascript/js_login.js" type="text/javascript"></script> 
+<script src="Alumnos/CVLibros/_javascript/ajuste_estilo_base.js" type="text/javascript"></script> 
+<!--<script src="Alumnos/CVLibros/_javascript/js_login.js" type="text/javascript"></script>--> 
 
 
