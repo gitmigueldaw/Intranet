@@ -1,0 +1,33 @@
+Será una página a la que podrá acceder cualquier rango. 
+
+La app entera irá en una carpeta independiente. Dentro tendrá una carpeta para las
+imágenes que suban los vendedores al anunciar su libro. Habrá que ver dónde se dejan
+las fotos en el servidor linux.
+
+Constará de un formulario con los campos necesarios para completar los datos de la tabla
+de anuncios. También se podrá subir una imagen, que habrá que tener alguna restriccion de
+tamaño. Guardar en la tabla el nombre del fichero de imagen.
+
+Un botón de reportar uso inadecuado. Al pulsarlo se informará de que se va a informar a
+quien sea de uso inadecuado. Para borrar el registro, no se necesitará que sea un rol
+superior para ver un botón de borrar, sino que puede ser un php a parte al que se acceda
+únicamente mediante una url muy larga y complicada, asignada a cada venta de alguna manera
+(¿guardando algo en la tabla anuncios?) y que se enviará por correo al profesor para que
+pulsando el enlace la borre, pero antes en el mismo email
+
+Necesitaré un rol que sea el vendedor, que pueda borrar su anuncio porque se ha vendido o
+porque quiere, otro rol para alumnos, que no puedan borrar anuncios, y rol todopoderoso
+que pueda borrar anuncios reportados.
+
+
+vendedor 1      vende      N libros
+
+SE USA MARIADB
+
+No hace falta guardar al comprador.
+
+El ID del anuncio será un número aleatorio de un rango grande, y se usará para dar nombre a la imagen y
+para borrar el anuncio.
+
+ 
+La clave para el vendedor tendrá que ser entre 5 y 20 caraceteres, con un número, una mayúscula y una minuscula al menos.

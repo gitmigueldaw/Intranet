@@ -1,0 +1,12 @@
+1. Crear cuenta gmail desde la que mandar
+2. Añadir seguridad de dos pasos a la cuenta    https://www.google.com/landing/2step/?hl=es
+3. Generar contraseña para aplicaciones         https://support.google.com/mail/answer/185833
+
+-----------------------------------------------------------
+
+ACCESO AL CORREO NORMAL
+iesetgmadrid@gmail.com
+pass: aglqyp160 (tiene seguridad con SMS a mi movil -paso 2-)
+
+contraseña de aplicación para mandar emails desde PHP:
+qrmytjavfdzukfzx

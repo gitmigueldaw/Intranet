@@ -1,0 +1,68 @@
+Mi url:     www.tiernogalvan.es?alucom
+
+
+La PK de los vendedores será el email, porque si fuera email + pass y un usuario 
+que se registra resulta que elige la misma pass y email, debería salir un aviso de
+que ya está cogido, por lo tanto podría entrar con ese nombre y password a la cuenta del otro.
+Con solo el email, en cuanto se repita uno, se da aviso de inválido sin mirar la contraseña.
+
+--------------------------------------------------------
+
+La id del anuncio será aleatoria, no se puede repetir (FK), servirá para dar nombre a
+la imagen subida y para borrar el anuncio con un link y ?borrar=id
+
+Al subir la foto, se crea en el directorio "fotos" una carpeta con el nombre del
+id del anuncio. Dentro la imagen con nombre idanunio.jpg y una miniatura idanuncio_mini.jpg
+
+El tamaño máximo de imagen a subir es de 2MB. Después se pasa a jpg automáticamente
+Si sobrepasa los 1200 de alto o ancho, se reduce automáticamente, manteniendo la relación
+de aspecto
+
+Para facilitar el uso, los vendedores no se tendrán que registrar con lo típico de nombre y
+contraseña, sino que solo necesitan una contraseña, de 8 como mínimo para vender y ver sus 
+anuncios si ya han vendido.
+
+Los emails se envían a través del servidor de gmail, utilizando un correo creado para ello.
+Suelen llegar a la carpeta de SPAM en emails no gmail.
+
+
+
+
+En la parte de js_anuncio (anuncio_CRUD_plantilla) por defecto se crea un botón para editar el anuncio
+y cuando se pulsa, se quita ese botón y se crea otro de guardar los cambios, con innerHTML sobre
+el div contenedor. Cada vez que se cambia el contenido con innerHTML hay que crear escuchadores
+para ese elemento porque al quitarlo se pierde.
+
+
+REGISTRO 
+
+En el formulario de registroes un form, tiene botón submit y compueba los inputs con
+require o el tipo email al pulsar en el boton. Con esto se evita el uso de expresiones regulares
+y tener que personalizar mensajes de error. 
+Los inputs tienen js con el evento "input" que comprueban al vuelo, para que
+el usuario sepa qué está mal antes de pulsar el botón de registro
+
+El email tiene evento change, que comprueba cuando pierde el foco y guarda el resultado 
+en una variable global, porque:
+
+    /* NOTA: Primero se ejecuta el return y luego el success, por lo que el estado
+     * resultante de lo que queremos devolver en la función (disponible) cambia después de retornarla.
+     * La variable tendrá que estar en una variable global y cambiarla dependiendo del
+     * resultado de la respuesta recibida */
+
+
+PARA QUE ADMITA DECIMALES UN INPUT TIPO NUMBER:   step="0.01"
+ <input type="number" step="0.01" id="cajaPRECIO" value="" required="required">
+
+VISTAS
+Tiene haber dos vistas, una para usuario anónimo y otro para vendedor logeado.
+Para el logeado, habrá un botón de "Ver mis anuncios" o algo así, que genere
+los anuncios cuyo campo "email_vendedor" correspoinda al usuario guardado en
+S_SESSION['logeado']['email'];
+ 
+
+
+LOGIN
+El botón de acceder está deshabilitado. El email se comprueba con ajax con el evento onblur
+La contraseña con el evento oninput. Cuando el email está en la DB y el pass corresponde
+a ese email, se habilita el botón de acceder y se guarda en sesión al usuario completo.
