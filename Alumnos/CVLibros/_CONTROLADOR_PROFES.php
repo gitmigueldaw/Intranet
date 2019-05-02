@@ -11,7 +11,7 @@ include_once 'Comun/seccion_2.php';
 
 include_once 'modelo/Modelo.php';
 include_once 'funciones/funciones.php';
-$pdo = PatronSingleton::getSingleton();
+$pdo = PatronSingleton_CVLibros::getSingleton();
 
 // CADA IF ES UN CONTROLADOR
 //------------------------------------------------------------------------------

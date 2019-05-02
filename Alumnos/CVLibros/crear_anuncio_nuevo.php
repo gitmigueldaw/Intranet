@@ -43,28 +43,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST) && empty($_FILES) && $
     }
 
     if ($subidaOK) {
-        $pdo = PatronSingleton::getSingleton();
+        $pdo = PatronSingleton_CVLibros::getSingleton();
 
         // Para la fecha del anuncio
         $date = new DateTime();
         $date = $date->format('Y-m-d');
 
         if ($pdo->INSERT_anuncio($_SESSION['ID_anuncio_alu_com'], $_SESSION['logeado_alu_com']['ve_email'], $isbn, $titulo, $editorial, $estado, $precio, $rango, $date, $foto) == 1) {
-            
-            
-            
-            
-            // ¿Mandar email?
-            
-            
-            
-            
-            
+
             $idAnuncio = $_SESSION['ID_anuncio_alu_com'];
             unset($_SESSION['ID_anuncio_alu_com']);
 
-            // Ir a mensaje de confirmación
-            echo "<script>document.location.href='../../index.php?alu_com&anunciocreado&idAnuncio=" . $idAnuncio . "';</script>";
+
+            // Mandar email
+            $cuerpo = '<div style="background-color: white">'
+                    . '     <h2 style="color: white; background-color: #448b44; text-align: center; padding: 1% 2vw; border-radius: 1vw">'
+                    . '         Información del anuncio'
+                    . '     </h2>'
+                    . '     <div style="background-color: #e6f3ff; padding: 5% 10% 5% 10%; color: black; border-radius: 1vw">'
+                    . '         <h3>Título:</h3> &nbsp; - ' . $titulo . '<br>'
+                    . '         <h3>ISBN:</h3> &nbsp; - ' . $isbn . '<br>'
+                    . '         <h3>Editorial:</h3> &nbsp; - ' . $editorial . '<br>'
+                    . '         <h3>Estado:</h3> &nbsp; - ' . $estado . '<br>'
+                    . '         <h3>Precio:</h3> &nbsp; - ' . $precio . '<br>'
+                    . '     </div>'
+                    . '     <div>'
+                    . '         <h2 style="text-align: center; padding: 1% 2vw; background-color: salmon">'
+                    . '             Puede borrar su anuncio pulsando este enlace: <br> '
+                    . '             <a href="http://www.tiernogalvan.es/index.php?alu_com&borradoEmail=' . $idAnuncio . '">Borrar anuncio</a>'
+                    . '         </h2>'
+                    . '         <h2 style="text-align: center; padding: 1% 2vw; background-color: salmon">'
+                    . '             No responda a este correo. '
+                    . '         </h2>'
+                    . '     </div>'
+                    . '</div>';
+
+
+            $mail = new Email($_SESSION['logeado_alu_com']['ve_email'], 'Ha puesto un libro a la venta.', $cuerpo);
+            $mail->mandar_correo();
+
+            // Mensajes de confirmación dependiendo de si se mandó el email o no
+            if ($mail->getResultado()) {
+                echo "<script>document.location.href='../../index.php?alu_com&anunciocreadoMailOK&idAnuncio=" . $idAnuncio . "';</script>";
+            } else {
+                echo "<script>document.location.href='../../index.php?alu_com&anunciocreado&idAnuncio=" . $idAnuncio . "';</script>";
+            }
+
         } else {
             $_SESSION['MENS_FOTO_alu_com'] = 'No se ha podido crear el anuncio.';
             echo "<script>document.location.href='../../index.php?alu_com&problema';</script>";

@@ -14,7 +14,7 @@ $validez = true;
 $_SESSION['datos_login_alu_com']['email'] = filtrado($_POST['email']);
 $_SESSION['datos_login_alu_com']['pass'] = filtrado($_POST['pass']);
 
-$pdo = PatronSingleton::getSingleton();
+$pdo = PatronSingleton_CVLibros::getSingleton();
 
 // Comprobar solo si existe el email
 $vendedor = $pdo->SELECT_vendedor(filtrado($_POST['email']));

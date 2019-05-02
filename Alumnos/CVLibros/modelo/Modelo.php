@@ -1,6 +1,6 @@
 <?php
 
-class PatronSingleton {
+class PatronSingleton_CVLibros {
     private $contenido;
     private $servidor;
     private $usuario;

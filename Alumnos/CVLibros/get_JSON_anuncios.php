@@ -2,7 +2,7 @@
 
 include_once 'modelo/Modelo.php';
 
-$pdo = PatronSingleton::getSingleton();
+$pdo = PatronSingleton_CVLibros::getSingleton();
 
 
 if (isset($_POST['rango_alu_com'])) {

@@ -5,7 +5,7 @@ include_once 'funciones/funciones.php';
 
 session_start();
 
-$pdo = PatronSingleton::getSingleton();
+$pdo = PatronSingleton_CVLibros::getSingleton();
 
 // Para modificar
 if (isset($_POST['isbn'])) {
@@ -25,11 +25,10 @@ if (isset($_POST['isbn'])) {
 
     // Para borrar
 } else if (isset($_POST['borrarlo'])) {
-    
     $id = filtrado($_POST['borrarlo']);
 
     if ($pdo->DELETE_anuncio($id) == 1) {
-      
+
         borrarImagenes($id, "no_desde_index");
         echo "borrado";
     } else {

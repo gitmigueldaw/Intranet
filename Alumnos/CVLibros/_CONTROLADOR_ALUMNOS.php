@@ -5,14 +5,17 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Partes genéricas HTML
-include_once 'Comun/cabecera.php';
-include_once 'Comun/seccion_1.php';
-include_once 'Comun/seccion_2.php';
+// Partes genéricas HTML, solo incluidas cuando no es el caso del borrado de anuncio vía enlace de email
+if (!isset($_GET['borradoEmail'])) {
+    include_once 'Comun/cabecera.php';
+    include_once 'Comun/seccion_1.php';
+    include_once 'Comun/seccion_2.php';
+}
+
 
 include_once 'modelo/Modelo.php';
 include_once 'funciones/funciones.php';
-$pdo = PatronSingleton::getSingleton();
+$pdo = PatronSingleton_CVLibros::getSingleton();
 
 //------------------------------------------------------------------------------
 if (isset($_GET['logearse'])) {
@@ -57,6 +60,11 @@ if (isset($_GET['logearse'])) {
 } else if (isset($_GET['anunciocreado']) && isset($_GET['idAnuncio'])) {
     $id = $_GET['idAnuncio'];
     include_once 'vista/mensajes/anuncio_creado_vista.php';
+
+    //------------------------------------------------------------------------------
+} else if (isset($_GET['anunciocreadoMailOK']) && isset($_GET['idAnuncio'])) {
+    $id = $_GET['idAnuncio'];
+    include_once 'vista/mensajes/anuncio_creado_email_vista.php';
 
     //------------------------------------------------------------------------------
 } else if (isset($_GET['problema'])) {
@@ -138,11 +146,23 @@ if (isset($_GET['logearse'])) {
         unset($_SESSION['logeado_alu_com']);
     }
 
-    // Refrescar. Con header no me deja
+    // Refrescar. Con header no deja
     echo "<script>document.location.href='?alu_com';</script>";
 
+    //------------------------------------------------------------------------------
+} else if (isset($_GET['borradoEmail']) && !empty($_GET['borradoEmail'])) {
+    $idAnuncio = $_GET['borradoEmail'];
+
+    if ($pdo->DELETE_anuncio($idAnuncio) == 1) {
+        borrarImagenes($idAnuncio);
+        
+        echo 'El anuncio se borró correctamente.';
+    } else {
+        echo 'No se pudo borrar.';
+    }
+
 //------------------------------------------------------------------------------
-    // Pantalla inicial
+    // Pantalla por defecto
 } else {
     // Lo primero, borrar anuncios viejos
     $viejos = $pdo->SELECT_anuncios_4_meses();
@@ -157,7 +177,7 @@ if (isset($_GET['logearse'])) {
 
     // Borrar mensajes y datos del formulario de login
     if (isset($_SESSION['errores_login_alu_com'])) {
-       unset($_SESSION['errores_login_alu_com']);
+        unset($_SESSION['errores_login_alu_com']);
     }
 
     if (isset($_SESSION['datos_login_alu_com'])) {
@@ -178,10 +198,11 @@ if (isset($_GET['logearse'])) {
     }
 }
 
-// Partes genéricas
-include_once 'Inicio/seccion_4.php';
-include_once 'Comun/seccion_5.php';
-
+// Partes genéricas HTML, solo incluidas cuando no es el caso del borrado de anuncio vía enlace de email
+if (!isset($_GET['borradoEmail'])) {
+    include_once 'Inicio/seccion_4.php';
+    include_once 'Comun/seccion_5.php';
+}
 // echo basename($_SERVER['PHP_SELF']);
 ?>
 

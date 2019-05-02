@@ -8,7 +8,7 @@ session_start();
 
 // unset($_SESSION['logeado_alu_con']); // por si hubiera alguien logeado
 
-$pdo = PatronSingleton::getSingleton();
+$pdo = PatronSingleton_CVLibros::getSingleton();
 
 // Para el evento change del campo del email
 if (isset($_POST['correo'])) {
@@ -44,26 +44,27 @@ if (isset($_POST['correo'])) {
             $telfno = 'Sin teléfono registrado.';
         }
 
-        $cuerpo = '<div style="background-color: dimgrey">'
-                . '     <h2 style="color: white; background-color: black; text-align: center; padding: 3%">'
+        $cuerpo = '<div style="background-color: white">'
+                . '     <h2 style="color: white; background-color: #448b44; text-align: center; padding: 1% 2vw; border-radius: 1vw">'
                 . '         Información sobre su cuenta de vendedor <br> I.E.S Enrique Tierno Galván'
                 . '     </h2>'
-                . '     <div style="background-color: #dedede; padding: 5% 10% 5% 10%; color: black">'
+                . '     <div style="background-color: #e6f3ff; padding: 5% 10% 5% 10%; color: black; border-radius: 1vw">'
                 . '         <h3>Email:</h3> &nbsp; - ' . $mail . '<br>'
                 . '         <h3>Contraseña:</h3> &nbsp; - ' . $pass . '<br>'
                 . '         <h3>Nombre de contacto:</h3> &nbsp; - ' . $nombre . '<br>'
                 . '         <h3>Teléfono:</h3> &nbsp; - ' . $telfno . '<br>'
                 . '     </div>'
                 . '     <div>'
-                . '         <h2 style="padding: 5%; background-color: salmon">No borre este correo, no podrá recuperar la contraseña si lo pierde.</h2>'
-                . '         <h2 style="padding: 5%; background-color: salmon"> No responda a este email. </h2>'
+                . '         <h2 style="text-align: center; padding: 1% 2vw; background-color: salmon">No borre este correo, no podrá recuperar la contraseña si lo pierde.</h2>'
+                . '         <h2 style="text-align: center; padding: 1% 2vw; background-color: salmon"> No responda a este email. </h2>'
                 . '     </div>'
                 . '</div>';
 
 
-        $mail = new Email($mail, 'Se ha creado su cuenta de vendedor.', $cuerpo);     
+        $mail = new Email($mail, 'Se ha creado su cuenta de vendedor.', $cuerpo);
         $mail->mandar_correo();
 
+        // Mensajes de confirmación dependiendo de si se mandó el email o no
         if ($mail->getResultado()) {
             echo "<script>document.location.href='../../index.php?alu_com&registroOKmailOK';</script>";
         } else {

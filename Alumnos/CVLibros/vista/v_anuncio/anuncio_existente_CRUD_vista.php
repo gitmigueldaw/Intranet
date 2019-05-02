@@ -116,7 +116,7 @@ en js_anuncio_CRUD.js añadido debajo
 <script>
     jconfirm.defaults = {
         useBootstrap: false
-    }
+    };
 </script> 
 
 <!-- Mi javascript -->
