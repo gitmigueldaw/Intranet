@@ -61,7 +61,7 @@ no se puede coger, sin embargo desde aquí si, por lo que guardo el dato en java
 aquí y lo uso en js_index_logeado.js añadido debajo
 -->
 <script>
-    var emailLogeado = "<?php echo $_SESSION['logeado_alu_com']['email'] ?>";
+    var emailLogeado = "<?php echo $_SESSION['logeado_alu_com']['ve_email'] ?>";
 </script>
 
 <!-- Mi javascript -->
