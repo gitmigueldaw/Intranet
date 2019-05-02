@@ -1,6 +1,6 @@
 <div class="cuerpo_alu_com">
 
-    <h1><?php echo $_SESSION['logeado_alu_com']['nombre']; ?>, bienvenido a la sección de venta de libros</h1>
+    <h1><?php echo $_SESSION['logeado_alu_com']['ve_nombre']; ?>, bienvenido a la sección de venta de libros</h1>
 
     <div style="display: flex;">  
 
@@ -20,7 +20,7 @@
                     <option value="0">Selecciona categoría</option>
 
                     <?php foreach ($rangos as $cadaFila) { ?>
-                        <option value="<?php echo $cadaFila['id'] ?>"> - <?php echo $cadaFila['rango'] ?></option>
+                        <option value="<?php echo $cadaFila['ra_id'] ?>"> - <?php echo $cadaFila['ra_rango'] ?></option>
                     <?php } ?>
                 </select> 
 

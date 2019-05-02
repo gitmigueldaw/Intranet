@@ -17,7 +17,7 @@
                     <option value="0">Selecciona categoría</option>
 
                     <?php foreach ($rangos as $cadaFila) { ?>
-                        <option value="<?php echo $cadaFila['id'] ?>"> - <?php echo $cadaFila['rango'] ?></option>
+                        <option value="<?php echo $cadaFila['ra_id'] ?>"> - <?php echo $cadaFila['ra_rango'] ?></option>
                     <?php } ?>
                 </select> 
 

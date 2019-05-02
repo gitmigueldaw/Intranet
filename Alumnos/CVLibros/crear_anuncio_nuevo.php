@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST) && empty($_FILES) && $
         $date = new DateTime();
         $date = $date->format('Y-m-d');
 
-        if ($pdo->INSERT_anuncio($_SESSION['ID_anuncio_alu_com'], $_SESSION['logeado_alu_com']['email'], $isbn, $titulo, $editorial, $estado, $precio, $rango, $date, $foto) == 1) {
+        if ($pdo->INSERT_anuncio($_SESSION['ID_anuncio_alu_com'], $_SESSION['logeado_alu_com']['ve_email'], $isbn, $titulo, $editorial, $estado, $precio, $rango, $date, $foto) == 1) {
             
             
             

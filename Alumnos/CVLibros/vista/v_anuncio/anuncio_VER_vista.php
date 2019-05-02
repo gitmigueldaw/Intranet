@@ -8,27 +8,27 @@
             <h3>INFORMACIÓN SOBRE EL LIBRO</h3>
             <div>
                 <span class="propiedad_libro_alu_com">· ISBN:</span>
-                <span><?php echo $anuncio['isbn']; ?> </span>
+                <span><?php echo $anuncio['an_isbn']; ?> </span>
             </div>
 
             <div>
                 <span class="propiedad_libro_alu_com">· TÍTULO:</span>
-                <span><?php echo $anuncio['titulo']; ?></span>
+                <span><?php echo $anuncio['an_titulo']; ?></span>
             </div>
 
             <div>
                 <span class="propiedad_libro_alu_com">· EDITORIAL:</span>
-                <span><?php echo $anuncio['editorial']; ?></span>
+                <span><?php echo $anuncio['an_edito']; ?></span>
             </div>
 
             <div>
                 <span class="propiedad_libro_alu_com">· ESTADO:</span>
-                <span><?php echo $anuncio['estado']; ?></span>
+                <span><?php echo $anuncio['an_estado']; ?></span>
             </div>
 
             <div>
                 <span class="propiedad_libro_alu_com">· PRECIO (€):</span>
-                <span><?php echo $anuncio['precio']; ?></span>
+                <span><?php echo $anuncio['an_precio']; ?></span>
             </div>
 
             <div>
@@ -36,7 +36,7 @@
                 <span><?php echo $fechaFormateada; ?></p>
             </div>
 
-            <?php if ($anuncio['foto'] != null) { ?>
+            <?php if ($anuncio['an_foto'] != null) { ?>
                 <span class="propiedad_libro_alu_com">· IMAGEN:</span> (click para tamaño completo)
 
                 <p>
@@ -55,13 +55,13 @@
             <h3>DATOS DE CONTACTO</h3>
             <div>
                 <span class="propiedad_vendedor_alu_com">· Nombre:</span>
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span><?php echo $anuncio['nombre']; ?></span>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span><?php echo $anuncio['ve_nombre']; ?></span>
             </div>
 
             <div>
                 <span class="propiedad_vendedor_alu_com">· Teléfono:</span>
-                <?php if ($anuncio['telefono'] != null) { ?>
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span><?php echo $anuncio['telefono']; ?></span>
+                <?php if ($anuncio['ve_telefo'] != null) { ?>
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span><?php echo $anuncio['ve_telefo']; ?></span>
 
                 <?php } else { ?>
                     <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span>No registrado</span>
@@ -70,7 +70,7 @@
 
             <div>
                 <span class="propiedad_vendedor_alu_com">· Correo electrónico:</span>
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span><?php echo $anuncio['email_vendedor']; ?></span>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span><?php echo $anuncio['an_email']; ?></span>
             </div>
         </div>
     </div>

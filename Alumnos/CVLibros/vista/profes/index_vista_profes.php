@@ -18,7 +18,7 @@
                     <option value="0">Selecciona rango educativo</option>
 
                     <?php foreach ($rangos as $cadaFila) { ?>
-                        <option value="<?php echo $cadaFila['id'] ?>"> - <?php echo $cadaFila['rango'] ?></option>
+                        <option value="<?php echo $cadaFila['an_id'] ?>"> - <?php echo $cadaFila['an_rango'] ?></option>
                     <?php } ?>
                 </select> 
 

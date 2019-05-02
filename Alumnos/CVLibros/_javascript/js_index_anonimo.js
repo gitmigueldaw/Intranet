@@ -74,18 +74,18 @@ function crearTablaAnuncios(array) {
     // Solo mostrar ciertas columnas y cambiarles el nombre.
     for (var indice in array[0]) {
 
-        if (indice == "isbn" || indice == "titulo" || indice == "editorial" || indice == "precio" || indice == "fecha") {  // || indice == "foto"
+        if (indice == "an_isbn" || indice == "an_titulo" || indice == "an_edito" || indice == "an_precio" || indice == "an_fecha") {  // || indice == "foto"
             var th = document.createElement("th");
 
-            if (indice == "isbn") {
+            if (indice == "an_isbn") {
                 indice = "ISBN"
-            } else if (indice == "titulo") {
+            } else if (indice == "an_titulo") {
                 indice = "TÍTULO";
-            } else if (indice == "editorial") {
+            } else if (indice == "an_edito") {
                 indice = "EDITORIAL";
-            } else if (indice == "precio") {
+            } else if (indice == "an_precio") {
                 indice = "PRECIO";
-            } else if (indice == "fecha") {
+            } else if (indice == "an_fecha") {
                 indice = "FECHA";
             }
 
@@ -103,7 +103,7 @@ function crearTablaAnuncios(array) {
 
         for (var indice in array[i]) {
 
-            if (indice == "isbn" || indice == "titulo" || indice == "editorial" || indice == "precio" || indice == "fecha" || indice == "foto") {
+            if (indice == "an_isbn" || indice == "an_titulo" || indice == "an_edito" || indice == "an_precio" || indice == "an_fecha" || indice == "an_foto") {
                 var td = document.createElement("td");
 
                 // Si es una fecha, pasarla del formato yyyy-mm-dd  a  dd-mm-yyyy
@@ -115,7 +115,7 @@ function crearTablaAnuncios(array) {
                     tr.appendChild(td);
 
                     // Si es el precio, añadir el símbolo del euro o consultar
-                } else if (indice == "precio") {
+                } else if (indice == "an_precio") {
                     var val;
                     
                     if(array[i][indice] == 0){
@@ -128,7 +128,7 @@ function crearTablaAnuncios(array) {
                     tr.appendChild(td);
 
                     // Si el campo foto, mostrar un iconito
-                } else if (indice == "foto") {
+                } else if (indice == "an_foto") {
                     var src;
 
                     if (array[i][indice] != null) {
@@ -269,7 +269,7 @@ function obtener_ID_de_TR(fila) {
     var arrayIDS = new Array();
 
     for (var i = 0; i < arrayAnuncios.length; i++) {
-        arrayIDS.push(arrayAnuncios[i].id);
+        arrayIDS.push(arrayAnuncios[i].an_id);
     }
 
     // -1 porque también cuenta como TR la fila de los títulos

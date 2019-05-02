@@ -32,12 +32,12 @@ if (isset($_GET['anuncioborrado'])) {
         $anuncio = $pdo->SELECT_anuncio($id);
 
         // Cambiar formato a fecha
-        $array = explode('-', $anuncio['fecha']);
+        $array = explode('-', $anuncio['an_fecha']);
         $fechaFormateada = $array[2] . '-' . $array[1] . '-' . $array[0];
 
         // Asignar dirección de la foto y miniatura
-        $dirMiniatura = 'Alumnos/CVLibros/fotos/' . $anuncio['id'] . '/' . $anuncio['id'] . '_mini.jpg';
-        $dirFoto = 'Alumnos/CVLibros/fotos/' . $anuncio['id'] . '/' . $anuncio['id'] . '.jpg';
+        $dirMiniatura = 'Alumnos/CVLibros/fotos/' . $anuncio['an_id'] . '/' . $anuncio['an_id'] . '_mini.jpg';
+        $dirFoto = 'Alumnos/CVLibros/fotos/' . $anuncio['an_id'] . '/' . $anuncio['an_id'] . '.jpg';
 
         // La vista CRUD
         include "vista/v_anuncio/anuncio_existente_CRUD_vista.php";
@@ -53,8 +53,8 @@ if (isset($_GET['anuncioborrado'])) {
 
     if (count($viejos) > 0) {
         for ($i = 0; $i < count($viejos); $i++) {
-            if ($pdo->DELETE_anuncio($viejos[$i]['id']) == 1) {
-                borrarImagenes($viejos[$i]['id']);
+            if ($pdo->DELETE_anuncio($viejos[$i]['an_id']) == 1) {
+                borrarImagenes($viejos[$i]['an_id']);
             }
         }
     }
