@@ -24,14 +24,14 @@ class Conexion {
         
         //cambiarlo cuando sea global
         
-//        $this->setUsuario($this->contenido['usuario_admin']);
-//        $this->setClave($this->contenido['contrasenia_admin']);
-//        $this->setBd($this->contenido['nombrebd']);
+        $this->setUsuario($this->contenido['usuario_admin']);
+        $this->setClave($this->contenido['contrasenia_admin']);
+        $this->setBd($this->contenido['nombrebd']);
         
         //de momento usar usuario y contra a mano
-        $this->setUsuario('root');
-        $this->setClave('root');
-        $this->setBd('basedatos');
+//        $this->setUsuario('root');
+//        $this->setClave('root');
+//        $this->setBd('basedatos');
 
         $this->con = new mysqli($this->servidor, $this->usuario, $this->clave, $this->bd) or die("No se ha podido conectar al servidor");
     }
