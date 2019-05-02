@@ -4,6 +4,7 @@
         Se ha registrado con éxito.
     </h2>
     <p>Apunte su contraseña, no la podrá recuperar.</p>
+    
     <br><br>
 
     <a class="hvr-grow-shadow boton_alu_com" href="?alu_com">Ir al índice</a>

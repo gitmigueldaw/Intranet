@@ -3,10 +3,11 @@
     <h2>
         Ha habido un problema subiendo la imagen: <br>
     </h2>
-    <br><br>
-    
+
     <!-- Reutilizo esta variable para los mensajes de error -->
     <p><?php echo $_SESSION['MENS_FOTO_alu_com']; ?></p>
+
+    <br><br>
 
     <a class="hvr-grow-shadow boton_alu_com" href="?alu_com">Ir al índice</a>
 </div>

@@ -5,7 +5,9 @@
     </h2>
     <p>Recibirá un correo electrónico con la información del registro.<br>
         (Compruebe su carpeta de SPAM). </p>
+    
     <br><br>
+    
 
     <a class="hvr-grow-shadow boton_alu_com" href="?alu_com">Ir al índice</a>
 </div>
