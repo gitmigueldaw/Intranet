@@ -67,11 +67,11 @@ class PatronSingleton {
     public function SELECT_anuncio($idAnuncio) {
 
         try {
-            $prepSentencia = $this->pdo->prepare('SELECT a.*, v.nombre, v.telefono '
-                    . 'FROM anuncios a '
-                    . 'join vendedores v '
-                    . 'on(v.email = a.email_vendedor) '
-                    . 'where a.id = :id');
+            $prepSentencia = $this->pdo->prepare('SELECT a.*, v.ve_nombre, v.ve_telefo '
+                    . 'FROM cv_anuncios a '
+                    . 'join cv_vendedores v '
+                    . 'on(v.ve_email = a.an_email) '
+                    . 'where a.an_id = :id');
 
             $prepSentencia->execute([':id' => $idAnuncio]) or die("Ha ocurrido un error al seleccionar anuncios de vendedor.");
 
@@ -94,7 +94,7 @@ class PatronSingleton {
 
     public function SELECT_anuncios_de_rango($idRango) {
         try {
-            $prepSentencia = $this->pdo->prepare('select * from anuncios where rango_libro = :rango order by fecha desc');
+            $prepSentencia = $this->pdo->prepare('select * from cv_anuncios where an_rango = :rango order by an_fecha desc');
             $prepSentencia->execute([':rango' => $idRango]) or die("Ha ocurrido un error al seleccionar anuncios de rango de estudios.");
 
             $filasAfectadas = $prepSentencia->rowCount();  // Probado
@@ -117,7 +117,7 @@ class PatronSingleton {
     public function SELECT_anuncios_de_vendedor($email) {
 
         try {
-            $prepSentencia = $this->pdo->prepare('select * from anuncios where email_vendedor = :email order by fecha desc');
+            $prepSentencia = $this->pdo->prepare('select * from cv_anuncios where an_email = :email order by an_fecha desc');
             $prepSentencia->execute([':email' => $email]) or die("Ha ocurrido un error al seleccionar anuncios de vendedor.");
 
             $filasAfectadas = $prepSentencia->rowCount();  // Probado
@@ -139,7 +139,7 @@ class PatronSingleton {
 
     function INSERT_anuncio($id, $mail_vende, $isbn, $titulo, $editorial, $estado, $precio, $rango, $fecha, $foto) {
         try {
-            $prepSentencia = $this->pdo->prepare('insert into basedatos.anuncios (id, email_vendedor, isbn, titulo, editorial, estado, precio, rango_libro, fecha, foto) '
+            $prepSentencia = $this->pdo->prepare('insert into cv_anuncios (an_id, an_email, an_isbn, an_titulo, an_edito, an_estado, an_precio, an_rango, an_fecha, an_foto) '
                     . 'VALUES (:id, :mail, :isbn, :titulo, :editorial, :estado, :precio, :rango, :fecha, :foto)');
 
             $prepSentencia->execute([
@@ -167,13 +167,13 @@ class PatronSingleton {
     function UPDATE_anuncio($id, $isbn, $titulo, $editorial, $estado, $precio) {
        
         try {
-            $prepSentencia = $this->pdo->prepare('update anuncios '
-                    . 'set isbn = :isbn, '
-                    . 'titulo = :titulo, '
-                    . 'editorial = :edito, '
-                    . 'estado = :estado, '
-                    . 'precio = :precio '
-                    . 'where id = :id');
+            $prepSentencia = $this->pdo->prepare('update cv_anuncios '
+                    . 'set an_isbn = :isbn, '
+                    . 'an_titulo = :titulo, '
+                    . 'an_edito = :edito, '
+                    . 'an_estado = :estado, '
+                    . 'an_precio = :precio '
+                    . 'where an_id = :id');
 
             // Dar valor a los :elementos creando un array "al vuelo" con los datos
             $prepSentencia->execute([
@@ -196,7 +196,7 @@ class PatronSingleton {
 
     function DELETE_anuncio($idAnuncio) {
         try {
-            $prepSentencia = $this->pdo->prepare('delete from anuncios where id = :id');
+            $prepSentencia = $this->pdo->prepare('delete from cv_anuncios where an_id = :id');
             $prepSentencia->execute([':id' => $idAnuncio]) or die("Ha ocurrido un error al borrar el anuncio.");
 
             $filasAfectadas = $prepSentencia->rowCount();
@@ -211,8 +211,8 @@ class PatronSingleton {
 
     public function SELECT_anuncios_4_meses() {
         try {
-            $prepSentencia = $this->pdo->prepare('select * from anuncios '
-                    . 'where fecha < CURRENT_TIMESTAMP - INTERVAL 4 MONTH');
+            $prepSentencia = $this->pdo->prepare('select * from cv_anuncios '
+                    . 'where an_fecha < CURRENT_TIMESTAMP - INTERVAL 4 MONTH');
             $prepSentencia->execute() or die("Ha ocurrido un error al seleccionar anuncios con más de 4 meses.");
 
             $filasAfectadas = $prepSentencia->rowCount();  // Probado
@@ -236,7 +236,7 @@ class PatronSingleton {
 
     public function SELECT_rangos_libros() {
         try {
-            $prepSentencia = $this->pdo->prepare('select * from rangos_libros');
+            $prepSentencia = $this->pdo->prepare('select * from cv_rangos_libros');
             $prepSentencia->execute() or die("Ha ocurrido un error al seleccionar los rangos.");
 
             $filasAfectadas = $prepSentencia->rowCount();  // Probado
@@ -259,9 +259,9 @@ class PatronSingleton {
     public function SELECT_rangos_con_anuncios() {
         try {
             $prepSentencia = $this->pdo->prepare('SELECT distinct r.* 
-                FROM rangos_libros r 
-                join anuncios a 
-                on (a.rango_libro = r.id);'
+                FROM cv_rangos_libros r 
+                join cv_anuncios a 
+                on (a.an_rango = r.ra_id);'
             );
 
             $prepSentencia->execute() or die("Ha ocurrido un error al seleccionar los rangos.");
@@ -285,12 +285,11 @@ class PatronSingleton {
 
     //****************************************************************************************************
 
-
     /* Solo nombre: comprobar si existe para no registrar otro con mismo nombre.
      * Con pass, para validar el login de un usuario */
     function SELECT_vendedor($email, $pass = null) {
         try {
-            $prepSentencia = $this->pdo->prepare('select * from vendedores where email = :mail');
+            $prepSentencia = $this->pdo->prepare('select * from cv_vendedores where ve_email = :mail');
             $prepSentencia->execute([':mail' => $email]) or die("Ha ocurrido un error al seleccionar.");
             $prepSentencia->setFetchMode(PDO::FETCH_ASSOC);  // o "PDO::FETCH_BOTH" para indices asociativos y numéricos
 
@@ -302,7 +301,7 @@ class PatronSingleton {
                 $vendedor = $prepSentencia->fetch();  // fetch() para una fila, fetchAll() para muchas filas (guarda en un array). Se puede usar lo segundo en ambos casos      
                 // Para comprobar si el pass es correcto
                 if ($pass != null) {
-                    $hash_DB = $vendedor['hash_pass'];
+                    $hash_DB = $vendedor['ve_hash'];
 
                     // Verificar el pass con el hash de la DB
                     if (!password_verify($pass, $hash_DB)) {
@@ -323,7 +322,7 @@ class PatronSingleton {
         try {
             $hash = password_hash($pass, PASSWORD_DEFAULT, [15]);
 
-            $prepSentencia = $this->pdo->prepare('insert into vendedores (email, hash_pass, nombre, telefono) '
+            $prepSentencia = $this->pdo->prepare('insert into cv_vendedores (ve_email, ve_hash, ve_nombre, ve_telefo) '
                     . 'VALUES (:mail, :password, :nombre, :telefono)');
 
             $prepSentencia->execute([
@@ -345,7 +344,7 @@ class PatronSingleton {
 
     function DELETE_vendedor($email) {
         try {
-            $prepSentencia = $this->pdo->prepare('delete from vendedores where email = :mail');
+            $prepSentencia = $this->pdo->prepare('delete from cv_vendedores where ve_email = :mail');
             $prepSentencia->execute([':mail' => $email]) or die("Ha ocurrido un error al borrar el vendedor.");
 
             $filasAfectadas = $prepSentencia->rowCount();

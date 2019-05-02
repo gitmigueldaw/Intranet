@@ -1,4 +1,4 @@
-Crear en la base de datos local los mismos usuarios que están en le servidor, para probar
+Crear en la base de datos local los mismos usuarios que están en el servidor, para probar
 
 CREATE USER 'phpuser'@'localhost' IDENTIFIED BY 'phpp@sswd1819';
 GRANT ALL PRIVILEGES ON * . * TO 'phpuser'@'localhost';
