@@ -1,1 +1,0 @@
-// Directorio con ficheros del usuario anonimo de ftp

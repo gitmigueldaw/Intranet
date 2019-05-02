@@ -1,1 +1,0 @@
-// Directorio con ficheros privados del Dto. de Informatica
