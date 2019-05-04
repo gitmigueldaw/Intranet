@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST) && empty($_FILES) && $
                     . '     </div>'
                     . '     <div>'
                     . '         <h2 style="text-align: center; padding: 1% 2vw; background-color: salmon">'
-                    . '             Puede borrar su anuncio pulsando este enlace: <br> '
+                    . '             Puede borrar rápidamente su anuncio pulsando este enlace: <br> '
                     . '             <a href="http://www.tiernogalvan.es/index.php?alu_com&borradoEmail=' . $idAnuncio . '">Borrar anuncio</a>'
                     . '         </h2>'
                     . '         <h2 style="text-align: center; padding: 1% 2vw; background-color: salmon">'
