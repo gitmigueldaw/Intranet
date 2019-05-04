@@ -1,14 +1,25 @@
-
-
-Hay que cambiar en "Portada/Conexion.php":
-$this->con = new mysqli('localhost', 'root', 'Nohay2sin3', 'basedatos') or die("No se ha podido conectar al servidor");
-
-La conexion del modelo debe ser (IMPORTANTE EL PUERTO 3306):
-$this->pdo = new PDO("mysql:host=localhost:3306; dbname=basedatos; charset=utf8", 'useradmin', 'phpp@sswd1819admin');  
-
-
 IMPORTANTE: DECIRLE A SANTI QUE HAY QUE HACER:
 
 sudo chmod 777 /var/www/html/Alumnos/CVLibros/fotos
 
 PARA PODER CREAR CARPETAS Y SUBIR LAS IMÁGENES
+
+
+
+
+PARA QUE NO SE VEAN LOS DIRECTORIOS DE LA WEB por seguridad
+
+sudo nano /etc/apache2/apache2.conf
+
+PARA QUE SOLO SE APLIQUE A MI PARTE, AÑADIR:
+
+<Directory /var/www/html/Alumnos/CVLibros/>
+    Options FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+
+AUNQUE ES MEJOR APLICAR A TODA LA WEB, EDITANDO EL DIRECTORY:
+<Directory /var/www/>
+
+y quitar la palabra Indexes
