@@ -29,7 +29,7 @@ if (!$_SERVER['QUERY_STRING'] || $_SERVER['QUERY_STRING'] == 'log') {
     include_once './Comun/seccion_5.php';
 
     /* Opción Compra/Venta de Libros */
-    /* Problema: Al llegar desde el enlace de email, se ejecuta la línea 45, que recarga este
+    /* Al llegar desde el enlace de email, se ejecuta la línea 45, que recarga este
      * archivo y volvía a entrar por la línea 48 en bucle. Para evitarlo y que entre por la 39, se
      * crea una cookie que impide que entre por la 48 pero que entre por la 39.
      * en cuanto entra por la 39, se borra la cookie para que nadie pueda entrar solo con ?alu_com,

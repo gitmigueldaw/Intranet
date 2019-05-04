@@ -17,10 +17,13 @@ $pdo = PatronSingleton_CVLibros::getSingleton();
 //------------------------------------------------------------------------------
 if (isset($_GET['anuncioborrado'])) {
     ?>
-    <div style="width: 100%; text-align: center">
+    <div class="cuerpo_alu_com">
+        <h1>&nbsp;</h1>
         <h2>El anuncio fue borrado con éxito</h2>
 
-        <a href="?alu_com">Volver al índice</a>
+        <br><br>
+
+        <a hvr-grow-shadow boton_alu_com href="?alu_com">Ir al índice</a>
     </div>
     <?php
     //------------------------------------------------------------------------------
@@ -59,8 +62,17 @@ if (isset($_GET['anuncioborrado'])) {
         }
     }
 
+    // Borrar mensajes y datos del formulario de login
+    if (isset($_SESSION['errores_login_alu_com'])) {
+        unset($_SESSION['errores_login_alu_com']);
+    }
+
+    if (isset($_SESSION['datos_login_alu_com'])) {
+        unset($_SESSION['datos_login_alu_com']);
+    }
+
     // Para el select de categorías.
-    $rangos = $pdo->SELECT_rangos_con_anuncios();
+    $rangos = $pdo->SELECT_rangos_con_anuncios();   
     include 'vista/profes/index_vista_profes.php';
 }
 

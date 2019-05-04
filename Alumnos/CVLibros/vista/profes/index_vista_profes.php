@@ -12,13 +12,13 @@
             if (count($rangos) > 0) {
                 ?>         
 
-                <label for="elSelect_alu_com">- Selecciona categoría:</label>
+<!--                <label for="elSelect_alu_com"></label>-->
 
                 <select id="elSelect_alu_com">
                     <option value="0">Selecciona rango educativo</option>
 
                     <?php foreach ($rangos as $cadaFila) { ?>
-                        <option value="<?php echo $cadaFila['an_id'] ?>"> - <?php echo $cadaFila['an_rango'] ?></option>
+                        <option value="<?php echo $cadaFila['ra_id'] ?>"> - <?php echo $cadaFila['ra_rango'] ?></option>
                     <?php } ?>
                 </select> 
 
