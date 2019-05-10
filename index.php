@@ -31,7 +31,7 @@ if (!$_SERVER['QUERY_STRING'] || $_SERVER['QUERY_STRING'] == 'log') {
     /* Opción Compra/Venta de Libros */
     /* Al llegar desde el enlace de email, se ejecuta la línea 45, que recarga este
      * archivo y volvía a entrar por la línea 48 en bucle. Para evitarlo y que entre por la 39, se
-     * crea una cookie que impide que entre por la 48 pero que entre por la 39.
+     * crea una cookie que impide que entre por la 48 paro que entre por la 39.
      * en cuanto entra por la 39, se borra la cookie para que nadie pueda entrar solo con ?alu_com,
      * ya que la condición de la 39 permitiría entrar.     */
 } elseif (isset($_GET['alu_com'])) {
@@ -51,7 +51,6 @@ if (!$_SERVER['QUERY_STRING'] || $_SERVER['QUERY_STRING'] == 'log') {
     } else {
         include_once './Comun/error.php';
     }
-
 
     /* Opcion desconectar */
 } elseif ($_SERVER['QUERY_STRING'] == 'desc') {
