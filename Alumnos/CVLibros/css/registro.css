@@ -59,7 +59,9 @@
 #mens_nombre_alu_con,
 #mens_telefono_alu_con{
     position: absolute;
-    left: 36.5vw;
+    left: 37vw;
+    font-size: 1.1vw;
+    color: red;
 }
 
 .boton_registro_alu_com{

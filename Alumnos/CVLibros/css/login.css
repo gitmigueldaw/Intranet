@@ -110,4 +110,6 @@
 #mensLoginPass_alu_com{
     position: absolute;
     left: 30vw;
+    font-size: 1.1vw;
+    color: red;
 }
