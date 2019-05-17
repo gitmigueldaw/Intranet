@@ -1,0 +1,91 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-oct-2018, 18:12:47
+    Author     : Alexm
+*/
+@import url('https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Delius|Overlock:400i');
+
+html,
+body {
+    margin: 0px;
+    font-family: 'Delius';
+    font-size: 1.3vw;
+    overflow-x: hidden;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.cabecera {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: url(../Comun/img/cab.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: -7vw;
+}
+
+.izquierdaCabecera {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+}
+
+.logo {
+    margin: 0.4vw;
+    margin-left: 3vw;
+}
+
+.logo img {
+    height: 8vw;
+    width: 13vw;
+}
+
+.nombreInsti {
+    font-size: 3.6vw;
+    color: white;
+    font-family: 'Overlock';
+    margin-right: 2vw;
+}
+
+.usuario {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.3vw;
+    align-items: flex-end;
+    background-color: rgba(0,0,0,0.3);
+    width: 25%;
+    align-self: flex-end;
+    text-align: center;
+    margin-right: 0.5vw;
+}
+
+.usuario .content-usuario{
+    padding-right: 1vw;
+}
+
+.content-usuario h3{
+    margin: 0px;
+    color: white;
+}
+
+.content-usuario .desc{
+    background-color: rgb(46, 134, 193);
+    border-radius: 50%;
+    width: 60%;
+    margin: auto;
+}
+
+.desc a{
+    color: white;
+    text-decoration: none;
+}

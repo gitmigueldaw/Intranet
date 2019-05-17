@@ -1,0 +1,81 @@
+.cuerpo_anuncio_alu_com{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.izqda_anuncio_alu_com{
+    /*border: 1px solid gray;*/
+    text-align: left;
+    padding: 0 2.5vw 1.5vw 3vw;
+    margin: 1vw 0 1.5vw 0;
+    background-color: #deedfa;
+    border-radius: 1.3vw 0;
+
+    max-width: 55%;
+    min-width: 55%;
+}
+
+.dcha_anuncio_alu_com{
+    height: min-content;
+    /*border: 1px solid black;*/
+    text-align: left;
+    padding: 0 2.5vw 1vw 3vw;
+    margin: 1vw 0 1.5vw 0;
+    background-color: #deedfa;
+    border-radius: 1.3vw 0;
+
+    max-width: 25%;
+    min-width: 25%;
+}
+
+.izqda_anuncio_alu_com div, 
+.dcha_anuncio_alu_com div{
+    margin-bottom: 1vw;
+}
+
+.izqda_anuncio_alu_com h3, 
+.dcha_anuncio_alu_com h3{
+    text-align: center;
+    padding: 0.5vw;
+    background-color: white;
+    border-radius: 1.2vw 0;
+}
+
+.propiedad_libro_alu_com{
+    font-weight: bold;
+}
+
+/*.desc_libro_alu_com{
+    max-width: 100px;
+}*/
+
+.propiedad_vendedor_alu_com{
+    font-weight: bold;
+}
+
+.boton_inicio_alu_com{
+    font-family: Lora, serif;
+    border: 1px solid black;
+    padding: 0.5vw;
+    cursor: pointer;
+    font-size: 1.3vw;
+    border-radius: 0.8vw 0;
+    text-decoration: none;
+    color: white;
+    background-color: #2e86c1;
+    /*margin-top: 4vw;*/
+    position: absolute;
+    right: 2vw;
+    bottom: 3.5vw;
+}
+
+.boton_inicio_alu_com:hover{
+    color: white;
+    background-color: #045a9c;
+
+}
+
+.miniatura_detalle_alu_com{
+    max-width: 30vw;
+}

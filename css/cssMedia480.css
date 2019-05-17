@@ -1,0 +1,394 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-dic-2018, 16:04:48
+    Author     : Alexm
+*/
+
+
+@media only screen and (max-device-width : 480px) {
+
+    /*body mobil*/
+    .cont-movil{
+        display: block;
+    }
+
+    .section_dos{
+        /*el lateral*/
+        display: none;
+    }
+
+    .sectionBody{
+        margin:  0;
+    }
+
+    .footer-dos{
+        /*Contiene el mapa*/
+        display: none;
+    }
+
+    .section_uno{
+        margin-top: 0px !important;
+        padding-bottom: 40px ;
+        margin-bottom: -37px;
+        width: 100%;
+    }
+
+
+    /*carrusel*/
+    .content{
+        height: 100%;
+    }
+    
+    .left,
+    .right,
+    .circles{
+        font-size: 20px;
+        margin-top: -16px;
+    }
+
+    .location{
+        height: 35px;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0 90%);
+        clip-path: polygon(0 0, 100% 0, 100% 60%, 0 90%);
+        z-index: 3;
+    }
+
+    .carrusel{
+        margin-top: -10px;
+        z-index: 2;
+        height: 180px;
+    }
+
+    .location span{ 
+        font-size: 15px;
+        padding-top: 2px;
+    }
+
+    .descripcion{
+        display: flex;
+        flex-direction: column;
+        /*padding-bottom: 0;*/
+    }
+
+    .descripcion div{
+        margin: 10px 0;
+        width: 97%;
+        padding-bottom: 8px;
+    }
+
+    .descripcion h3{
+        font-size: 25px;
+        margin-bottom: 5px;
+        padding-left: 6px;
+    }
+
+    .descripcion span{
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    .accesoM{
+        display: flex !important;
+        background-color: rgba(255,255,255,0.35);
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+
+    .accesoM img{
+      width: 20%;
+
+    }
+
+    .accesoM h3{
+        font-size:19px;
+        margin: auto;
+        text-align: center;
+        padding-bottom: 4px;
+    }
+
+    form .boton-enviarM{
+        width: 85%;
+        color: white;
+        background: #045A9C;
+        font-size: 17px;
+        margin: auto;
+        display: block;
+
+    }
+
+    .accesoM .contenedorM{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+    }
+
+    .div-imgM {
+        width: 30px !important;
+        height: 27px!important;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .div-imgM img{
+        width: 30px;
+        height: 27px;
+    }
+
+    #usuarioM, #passM{
+        width: 80%;
+        margin-left: 5px;
+        font-size: 16px;
+        height: 20px;
+    }
+
+    .contenedorFooter{
+        flex-direction: column;
+    }
+
+    .footer-uno, .footer-tres{
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    /*CAMBIAR IMAGENES*/
+    .titulo-f img{
+        height: 50px;
+    }
+
+    .lineas, .contacto{
+        margin-top: 0;
+    }
+    
+    .inicio{
+        height: 0% !important;
+    }
+
+    .footer-uno, .footer-tres{
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        justify-content: space-around;
+        margin:  0 !important;
+    }
+
+    .footer-uno {
+        margin-left: 5px;
+    }
+
+    .footer-uno div, .footer-tres div{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .footer-tres{
+        margin-right: 5px;
+    }
+
+    .footer-uno .titulo-f, .footer-tres .titulo-f{
+        font-size: 25px;
+        padding: 0;
+    }
+
+    .footer-uno .despan, .footer-tres .despan{
+        margin-top:  0px;
+        font-size: 15px;
+    }
+
+    .sectionFooter{
+        -webkit-clip-path: polygon(50% 0%, 100% 5%, 100% 100%, 50% 100%, 0 100%, 0% 5%);
+        clip-path: polygon(50% 0%, 100% 5%, 100% 100%, 50% 100%, 0 100%, 0% 5%);
+    }
+
+    .final{
+        -webkit-clip-path: polygon(50% 90%, 100% 0, 100% 61%, 100% 100%, 0 100%, 0 57%, 0 0);
+        clip-path: polygon(50% 90%, 100% 0, 100% 61%, 100% 100%, 0 100%, 0 57%, 0 0);
+        height: 40px;
+    }
+
+    /*MENU MOBIL*/
+
+    #nav{
+        display: none;
+    }
+
+    .mobile-menu {
+        z-index: 4;
+        display:block;
+        width:100%;
+        /*background: #408ECE;*/
+        background:  #3259A8;
+        line-height: 1.6em;
+        font-weight: 400;
+        text-align:center;
+        position: relative;
+        margin:0 auto;
+    }
+
+    .mobile-menu ul {
+        list-style-type:none;
+        margin: 0 auto;
+        padding-left:0;
+        text-align:center;
+        width:100%;
+        background:  #3259A8;
+        position: static;
+        display: none;
+    }
+
+    .mobile-menu li {
+        display:inline-block;
+        margin-bottom: 1px;
+
+    }
+
+    .mobile-menu li a {
+        display:block;
+        width: 100%;
+        text-align: left;
+        font-family: fantasy;
+        color: #fff;
+        font-variant-caps: small-caps;
+        background:   #3E6FAD;/*color submenu*/
+        text-decoration: none;
+        padding: 10px 0 7px 0;  
+        -webkit-transition: all 0.4s ease 0s;
+        -moz-transition: all 0.4s ease 0s;
+        -ms-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+        font-size: 16px;
+        text-indent: 15px;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+
+    .mobile-menu li:hover a {
+        color:#045A9C;
+        background-color:white;
+        transition: ease-in 0.5s;
+        font-size: 17px;
+        letter-spacing: 3px;
+    }
+
+    .mobile-menu li:hover ul a {
+        background: #939BF2;
+        color: #2f3036;
+        height: 40px;
+        line-height: 40px;
+
+    }
+
+    .mobile-menu li:hover .mobile-menu ul a:hover {
+        color: #4db3ff;
+    }
+
+    .mobile-menu li ul {
+        display: none;
+    }
+
+    .mobile-menu li ul li {
+        display: block;
+        float: none;
+    }
+
+    .mobile-menu li ul li a {
+        width: auto;
+        min-width: 100px;
+        padding: 0 20px;
+    }
+
+    .mobile-menu .show-menu {
+        text-decoration: none;
+        color: #fff;
+        background: #045A9C;/*color cabecera menu*/
+        text-align: left;
+        padding: 15px 15px 17px 15px;
+        display: none;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+    .show-menu img{
+        margin-right: 4px;
+    }
+
+    .mobile-menu .show-menu span{
+        padding-left: 8px;
+    }
+
+    .mobile-menu input[type=checkbox]{
+        display: none;
+    }
+
+    .mobile-menu input[type=checkbox]:checked ~ #menu{
+        display: block;
+    }
+
+    .mobile-menu .lines {
+        border-bottom: 15px double #f8f8f8; 
+        border-top: 5px solid #f8f8f8; 
+        content:"";
+        height: 4px; 
+        width:18px;
+        padding-right:15px;
+        float: left;
+        margin-top: -8.5px;
+
+    }
+
+    .mobile-menu ul li, .mobile-menu li a {
+        width: 100%;
+    }
+
+    .mobile-menu .show-menu {
+        display:block;
+    }
+
+
+    /*CABECERA MOBIL*/
+    .cabecera{
+        /*        height: 100%;*/
+        flex-direction: column;
+        background-position-y: 0px;
+        background-size: 110%;
+    }
+
+    .logo{
+        margin: auto;
+    }
+
+    .nombreInsti{
+        margin: auto;
+    }
+
+
+    .cabecera .logo img{
+        height:85px;   
+        width: 160px;
+    }
+
+    .lenguas{
+        margin: auto;   
+    }
+
+    .lenguas span{
+        height:20px;
+        width: 37px;
+        margin: 4px 2px 2px 0;
+    }
+
+    .nombreInsti span{
+        font-size: 28px;
+    }
+
+    .izquierdaCabecera{
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+}

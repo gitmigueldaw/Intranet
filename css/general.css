@@ -1,0 +1,12 @@
+/* Estilos generales del sitio web */
+
+/*estilo cabecera*/
+@import url('header.css');
+/*estilo menu*/
+@import url('menu.css');
+/*estilo cuerpo*/
+@import url('body.css');
+/*estilo carrusel*/
+@import url('inicio_slide.css');
+/*estilos direccion gestion contable*/
+@import url('dir_gescon_css.css');
