@@ -59,4 +59,10 @@ Tiene haber dos vistas, una para usuario anónimo y otro para vendedor logeado.
 Para el logeado, habrá un botón de "Ver mis anuncios" o algo así, que genere
 los anuncios cuyo campo "email_vendedor" correspoinda al usuario guardado en
 S_SESSION['logeado_alu_com']['email'];
+
+Al enviar el email de borrado, por si alguien malicioso que supiera la URL de borrado de 
+anuncios y supiera las ids porque ha accedido por ejemplo a la carpeta del servidor con las
+imágenes (cuyo nombre es la id), la url del email tiene agregados artificialmente
+8 caracteres al inicio y 5 al final. Luego se quitan cunado se entra a la sección del controlador
+que borra el anuncio
  

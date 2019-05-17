@@ -29,10 +29,10 @@ if (!$_SERVER['QUERY_STRING'] || $_SERVER['QUERY_STRING'] == 'log') {
     
      /* Opción Compra/Venta de Libros */
     /* Al llegar desde el enlace de email, se ejecuta la línea 47, que recarga este
-     * archivo y volvía a entrar por la línea 48 en bucle. Para evitarlo y que entre por la 41, se
-     * crea una cookie que impide que entre por la 48 paro que entre por la 39.
-     * en cuanto entra por la 39, se borra la cookie para que nadie pueda entrar solo con ?alu_com,
-     * ya que la condición de la 39 permitiría entrar.     */
+     * archivo y volvía a entrar por la línea 47 en bucle. Para evitarlo y que entre por la 38, se
+     * crea una cookie que impide que entre por la 47 para que entre por la 38.
+     * en cuanto entra por la 38, se borra la cookie para que nadie pueda entrar solo con ?alu_com,
+     * ya que la condición de la 38 permitiría entrar.     */
 } elseif (isset($_GET['alu_com'])) {
     // Para alumnos
     if (isset($_COOKIE['salirbuclealu_com']) || (isset($_COOKIE['rol']) && ($_COOKIE['rol'] >= 6 && $_COOKIE['rol'] < 30))) {

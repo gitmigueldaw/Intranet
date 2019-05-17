@@ -10,3 +10,6 @@
 @import url('inicio_slide.css');
 /*estilos direccion gestion contable*/
 @import url('dir_gescon_css.css');
+
+/* estilos Alumnos compra/venta de libros (provisional, porque ya está importado en estilos.css) */
+/* @import url('../Alumnos/CVLibros/css/principal.css'); */

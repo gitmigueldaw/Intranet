@@ -151,7 +151,10 @@ if (isset($_GET['logearse'])) {
 
     //------------------------------------------------------------------------------
 } else if (isset($_GET['borradoEmail']) && !empty($_GET['borradoEmail'])) {
-    $idAnuncio = $_GET['borradoEmail'];
+    $gett = $_GET['borradoEmail'];
+    
+    // Por seguridad
+    $idAnuncio =  substr($gett, 8, 30);
 
     if ($pdo->DELETE_anuncio($idAnuncio) == 1) {
         borrarImagenes($idAnuncio);
@@ -200,7 +203,7 @@ if (isset($_GET['logearse'])) {
 
 // Partes genéricas HTML, solo incluidas cuando no es el caso del borrado de anuncio vía enlace de email
 if (!isset($_GET['borradoEmail'])) {
-    include_once 'Inicio/seccion_4.php';
+   // include_once 'Inicio/seccion_4.php';
     include_once 'Comun/seccion_5.php';
 }
 // echo basename($_SERVER['PHP_SELF']);

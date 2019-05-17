@@ -14,5 +14,10 @@ function cargarEventos(event) {
         $(".acceso a").css("margin-top", "0.5vw");
         $(".acceso a").css("margin-bottom", "0.5vw");
         $(".acceso img").css("width", "7vw");
+        // $(".izquierdaCabecera .usuario").css("visibility", "hidden");
+
+        $(".cuerpo_alu_com").css("background-image", "url(Alumnos/CVLibros/imgs/fondo.jpg)");
+        $(".cuerpo_login_alu_com").css("background-image", "url(Alumnos/CVLibros/imgs/fondo.jpg)");
+
     }
 }
