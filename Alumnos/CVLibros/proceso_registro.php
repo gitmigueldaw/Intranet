@@ -62,7 +62,7 @@ if (isset($_POST['correo'])) {
 
 
         $mail = new Email($mail, 'Se ha creado su cuenta de vendedor.', $cuerpo);
-       // $mail->mandar_correo();
+        $mail->mandar_correo();
 
         // Mensajes de confirmación dependiendo de si se mandó el email o no
         if ($mail->getResultado()) {
