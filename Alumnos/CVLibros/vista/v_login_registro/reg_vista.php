@@ -53,7 +53,7 @@
 
             <div class="parte_botones_alu_com">
                 <input class="hvr-grow-shadow boton_registro_alu_com" type="submit" value="Registrarse" name="btnSubmitReg" id="btnRegistrarse_alu_con"/>
-                <a class="hvr-grow-shadow boton_inicio_reg_alu_com" href="?alu_com">Volver al index</a>
+                <a class="hvr-grow-shadow boton_inicio_reg_alu_com" href="?alu_com">Volver al inicio</a>
             </div>
 
         </form>

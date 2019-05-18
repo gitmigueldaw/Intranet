@@ -21,7 +21,7 @@
 
             <div class="parte_botones_alu_com">
                 <input class="hvr-grow-shadow boton_log_alu_com" type="submit" value="Acceder" id="btnLogin_alu_com" name="btnSubmitLog"/>
-                <a class="hvr-grow-shadow boton_inicio_log_alu_com" href="?alu_com">Volver al index</a>
+                <a class="hvr-grow-shadow boton_inicio_log_alu_com" href="?alu_com">Volver al inicio</a>
             </div>
 
         </form>
