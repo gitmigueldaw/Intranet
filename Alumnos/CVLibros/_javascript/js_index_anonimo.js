@@ -18,8 +18,6 @@ function cargarEventos(event) {
     }
 }
 
-// Variable global para guardar los anuncios y obtener la ID del TR pulsado, mediante
-// la función "obtener_ID_de_TR()"
 function pedirAnunciosAjax(evento) {
     divRespuesta.innerHTML = "";
     divMini_Boton.innerHTML = "";
@@ -146,7 +144,7 @@ function crearTablaAnuncios(array) {
 //                        td.style.backgroundColor = 'white';
                     });
 
-                    // impedir que se vea la miniatura al hacer click en la fotito
+                    // impedir que se vea la miniatura al hacer click en el último td (la cámara)
                     td.addEventListener("click", function (evento) {
                         evento.stopPropagation();
                     });

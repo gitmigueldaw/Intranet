@@ -182,24 +182,3 @@ function test_usuario_registrado() {
         });
     }
 }
-
-//    function test_inputs_vacios() {
-//        var formOK = true;
-//
-//        mensaje_registro.innerHTML = "";
-//
-//        var inputs = document.getElementsByTagName("input");
-//
-//        // Los 4 primeros inputs son obligatorios, el 5º es el movil que no lo es.
-//        for (var i = 0; i < 4; i++) {
-//            // true si no hay caracteres, aunque haya espacios
-//            if (/^[\s]{0,}$/.test(inputs[i].value)) {
-//                formOK = false;
-//                mensaje_registro.innerHTML = "Debe rellenar los campos obligatorios";
-//                break;
-//            }
-//        }
-//
-//        return formOK;
-//    }
-

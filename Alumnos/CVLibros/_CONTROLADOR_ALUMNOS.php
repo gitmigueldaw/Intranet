@@ -5,13 +5,12 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Partes genéricas HTML, solo incluidas cuando no es el caso del borrado de anuncio vía enlace de email
+// Partes genéricas HTML
 if (!isset($_GET['borradoEmail'])) {
     include_once 'Comun/cabecera.php';
     include_once 'Comun/seccion_1.php';
     include_once 'Comun/seccion_2.php';
 }
-
 
 include_once 'modelo/Modelo.php';
 include_once 'funciones/funciones.php';

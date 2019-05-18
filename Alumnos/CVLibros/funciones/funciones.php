@@ -37,7 +37,6 @@ function subir_imagen($idAnuncio) {
         // Comprobar tamaño del fichero. Si se pasa de 2MB, se guarda el tamaño como 0
         if ($_FILES['archivo_a_subir']['size'] > 2097152 || $_FILES['archivo_a_subir']['size'] == 0) {
             $_SESSION['MENS_FOTO_alu_com'] = "Imagen demasiado pesada. Máximo 2MB. Se recomienda subir imágenes en formato JPG.";
-//          echo "Imagen demasiado pesada. Máximo 2MB. Se recomienda subir imágenes en formato JPG.";
             $uploadOk = false;
         } else {
             // Permitir formatos
@@ -73,7 +72,7 @@ function subir_imagen($idAnuncio) {
                 // Si el formaot o propiedad de la imagen da problema, borrar la carpeta
                 if (!is_resource($imagen_en_jpg)) {
                     $uploadOk = false;
-                     unlink($directorio_destino . "/png");  // borraa el fichero
+                     unlink($directorio_destino . '/' . $extension_archivo_subido);  // borraa el fichero
                      rmdir($directorio_destino);            // borra la carpeta
                 }
 

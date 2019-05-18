@@ -13,7 +13,6 @@ include_once 'modelo/Modelo.php';
 include_once 'funciones/funciones.php';
 $pdo = PatronSingleton_CVLibros::getSingleton();
 
-// CADA IF ES UN CONTROLADOR
 //------------------------------------------------------------------------------
 if (isset($_GET['anuncioborrado'])) {
     ?>
@@ -77,7 +76,7 @@ if (isset($_GET['anuncioborrado'])) {
 }
 
 // Partes genéricas
-include_once 'inicio/seccion_4.php';
+// include_once 'inicio/seccion_4.php';
 include_once 'Comun/seccion_5.php';
 
 

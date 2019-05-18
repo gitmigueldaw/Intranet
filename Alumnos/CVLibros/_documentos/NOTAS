@@ -15,17 +15,11 @@ Al subir la foto, se crea en el directorio "fotos" una carpeta con el nombre del
 id del anuncio. Dentro la imagen con nombre idanunio.jpg y una miniatura idanuncio_mini.jpg
 
 El tamaño máximo de imagen a subir es de 2MB. Después se pasa a jpg automáticamente
-Si sobrepasa los 1200 de alto o ancho, se reduce automáticamente, manteniendo la relación
+Si sobrepasa los 900 de alto o ancho, se reduce automáticamente a esta medida, manteniendo la relación
 de aspecto
-
-Para facilitar el uso, los vendedores no se tendrán que registrar con lo típico de nombre y
-contraseña, sino que solo necesitan una contraseña, de 8 como mínimo para vender y ver sus 
-anuncios si ya han vendido.
 
 Los emails se envían a través del servidor de gmail, utilizando un correo creado para ello.
 Suelen llegar a la carpeta de SPAM en emails no gmail.
-
-
 
 
 En la parte de js_anuncio (anuncio_CRUD_plantilla) por defecto se crea un botón para editar el anuncio
