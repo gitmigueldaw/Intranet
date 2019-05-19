@@ -288,13 +288,5 @@ function obtener_ID_de_TR(fila) {
         }
     }
 
-    // Obtener los IDs de los anuncios y asignar el ID correspondiente de ese TR
-    var arrayIDS = new Array();
-
-    for (var i = 0; i < arrayAnuncios.length; i++) {
-        arrayIDS.push(arrayAnuncios[i].an_id);
-    }
-
-    // -1 porque también cuenta como TR la fila de los títulos
-    return arrayIDS[indice_fila - 1];
+    return arrayAnuncios[indice_fila - 1].an_id;
 }

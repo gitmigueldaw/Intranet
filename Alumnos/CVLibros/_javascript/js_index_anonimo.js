@@ -106,13 +106,13 @@ function crearTablaAnuncios(array) {
                     // Si es el precio, añadir el símbolo del euro o consultar
                 } else if (indice == "an_precio") {
                     var val;
-                    
-                    if(array[i][indice] == 0){
+
+                    if (array[i][indice] == 0) {
                         val = "Consultar";
                     } else {
                         val = array[i][indice] + "€";
                     }
-                                        
+
                     td.appendChild(document.createTextNode(val));
                     tr.appendChild(td);
 
@@ -130,7 +130,7 @@ function crearTablaAnuncios(array) {
                     img.setAttribute("src", src);
                     img.setAttribute("alt", "sin_foto");
 
-                //    td.style.border = "none"; // Quitar el borde al td de la foto
+                    //    td.style.border = "none"; // Quitar el borde al td de la foto
                     td.appendChild(img);
 
                     // Qitar los eventos que saltan al pasar el puntro por la fila
@@ -140,7 +140,7 @@ function crearTablaAnuncios(array) {
                         evento.stopPropagation();
 
                         td.style.cursor = 'default';
-                        td.parentNode.style.backgroundColor = 'white'; 
+                        td.parentNode.style.backgroundColor = 'white';
 //                        td.style.backgroundColor = 'white';
                     });
 
@@ -254,15 +254,7 @@ function obtener_ID_de_TR(fila) {
         }
     }
 
-    // Obtener los IDs de los anuncios y asignar el ID correspondiente de ese TR
-    var arrayIDS = new Array();
-
-    for (var i = 0; i < arrayAnuncios.length; i++) {
-        arrayIDS.push(arrayAnuncios[i].an_id);
-    }
-
-    // -1 porque también cuenta como TR la fila de los títulos
-    return arrayIDS[indice_fila - 1];
+    return arrayAnuncios[indice_fila - 1].an_id;
 }
 
 
