@@ -15,17 +15,16 @@ $bd        = $contenido["nombrebd"];
 $usuario   = $contenido["usuario_admin"];
 $clave     = $contenido["contrasenia_admin"];
 
-//									Conexión a MySQL
- $con = mysqli_connect($equipo, $usuario, $clave) or
+// Conexión a MySQL
+  $con = mysqli_connect($equipo, $usuario, $clave) or
         die("No se pudo establecer la conexión con el servidor MySQL");
  echo "Conexión establecida.<br>";
 
 
-
- $sql = "CREATE TABLE basedatos.rangos_libros (" .
-    "id int NOT NULL, " .
-    "rango varchar(60) DEFAULT NULL, " .
-    "PRIMARY KEY (id)" .
+ $sql = "CREATE TABLE IF NOT EXISTS basedatos.cv_rangos_libros (" .
+    "ra_id int NOT NULL, " .
+    "ra_rango varchar(60) DEFAULT NULL, " .
+    "PRIMARY KEY (ra_id)" .
     ") ENGINE = InnoDB DEFAULT CHARSET = utf8;";
 
  if (!mysqli_query($con, $sql)) {
@@ -34,14 +33,12 @@ $clave     = $contenido["contrasenia_admin"];
 
  echo "Se ha creado la tabla de rangos_libros<br>";
 
-
-
-$sql = "CREATE TABLE basedatos.vendedores (" .  
-  "email varchar(60) NOT NULL, " .
-  "hash_pass varchar(200) NOT NULL, " .
-  "nombre varchar(45) NOT NULL, " .
-  "telefono int(11) DEFAULT NULL, " .
-  "PRIMARY KEY (email) " .
+$sql = "CREATE TABLE IF NOT EXISTS basedatos.cv_vendedores (" .  
+  "ve_email varchar(60) NOT NULL, " .
+  "ve_hash varchar(200) NOT NULL, " .
+  "ve_nombre varchar(45) NOT NULL, " .
+  "ve_telefo int(11) DEFAULT NULL, " .
+  "PRIMARY KEY (ve_email) " .
 ") ENGINE=InnoDB DEFAULT CHARSET = utf8;"; 
 
 if (!mysqli_query($con, $sql)) {
@@ -51,20 +48,20 @@ if (!mysqli_query($con, $sql)) {
  echo "Se ha creado la tabla de vendedores<br>";
 
 
-$sql = "CREATE TABLE basedatos.anuncios (" .  
-  "id varchar(35) NOT NULL, " .
-  "email_vendedor varchar(60) NOT NULL, " .
-  "isbn varchar(45) DEFAULT ' - ', " .
-  "titulo varchar(100) DEFAULT NULL, " .
-  "editorial varchar(45) DEFAULT NULL, " .
-  "estado varchar(500) DEFAULT NULL, " .
-  "precio double DEFAULT NULL, " .
-  "rango_libro int NOT NULL, " .
-  "fecha date DEFAULT NULL, " .
-  "foto varchar(45) DEFAULT NULL, " .
-  "PRIMARY KEY (id), " .
-  "FOREIGN KEY (email_vendedor) REFERENCES vendedores (email), " .
-  "FOREIGN KEY (rango_libro) REFERENCES rangos_libros (id) " .
+$sql = "CREATE TABLE IF NOT EXISTS basedatos.cv_anuncios (" .  
+  "an_id varchar(35) NOT NULL, " .
+  "an_email varchar(60) NOT NULL, " .
+  "an_isbn varchar(45) DEFAULT ' - ', " .
+  "an_titulo varchar(100) DEFAULT NULL, " .
+  "an_edito varchar(45) DEFAULT NULL, " .
+  "an_estado varchar(500) DEFAULT NULL, " .
+  "an_precio double DEFAULT NULL, " .
+  "an_rango int NOT NULL, " .
+  "an_fecha date DEFAULT NULL, " .
+  "an_foto varchar(45) DEFAULT NULL, " .
+  "PRIMARY KEY (an_id), " .
+  "FOREIGN KEY (an_email) REFERENCES cv_vendedores (ve_email), " .
+  "FOREIGN KEY (an_rango) REFERENCES cv_rangos_libros (ra_id) " .
   ") ENGINE=InnoDB DEFAULT CHARSET = utf8;"; 
 
 if (!mysqli_query($con, $sql)) {
@@ -75,7 +72,7 @@ if (!mysqli_query($con, $sql)) {
 
 
 
- $sql = "INSERT INTO basedatos.rangos_libros (id, rango) VALUES
+ $sql = "INSERT INTO basedatos.cv_rangos_libros (ra_id, ra_rango) VALUES
    ('1', 'E.S.O'),
    ('2', 'Bachillerato'),
    ('3', 'Grado Medio'),
@@ -90,7 +87,7 @@ if (!mysqli_query($con, $sql)) {
 
 
 
- $sql = 'INSERT INTO basedatos.vendedores (email, hash_pass, nombre, telefono) VALUES
+ $sql = 'INSERT INTO basedatos.cv_vendedores (ve_email, ve_hash, ve_nombre, ve_telefo) VALUES
    ("miguel@gmail.com", "$2y$10$J7zsMODu6fFp/PtngpAIouxOltW5Wcpv57vfG..vcfqlTUKTlknqS", "Miguel", "666222999"),
    ("manolo@gmail.com", "$2y$10$bAzWv/q6rfRCQpl6cadLhusco1INKV4Z9c1NtjejE0AOciN25b2I.", "Manolo", "654987321");';
 
@@ -100,7 +97,7 @@ if (!mysqli_query($con, $sql)) {
  };
  echo "Se han dado de alta los vendedores<br>";
  
-  $sql = "INSERT INTO basedatos.anuncios (id, email_vendedor, isbn, titulo, editorial, estado, precio, rango_libro, fecha, foto) VALUES " .
+  $sql = "INSERT INTO basedatos.cv_anuncios (an_id, an_email, an_isbn, an_titulo, an_edito, an_estado, an_precio, an_rango, an_fecha, an_foto) VALUES " .
     "('044af672aa18731d41fd077f14d673', 'manolo@gmail.com', '9788448166441', 'Matemáticas aplicadas a las ciencias sociales', 'McGraw Hill', 'bueno', 14, 2, '2019-05-21', '044af672aa18731d41fd077f14d673'), " .
     "('0af2a99327df339a0b1ae99205c8a2', 'miguel@gmail.com', '', 'Fray Perico y su borrico', 'Barco de Vapor', 'Mítico libro infantil, en perfecto estado.<br>Atiendo Whatsapp o email.', 6, 5, '2019-05-12', '0af2a99327df339a0b1ae99205c8a2'), " .
     "('0b04244f4f894cdfd31b15c4aedd13', 'manolo@gmail.com', '8420713759', 'Química de segundo de bachilerato', 'Anaya', 'Bueno', 5, 2, '2019-04-12', '0b04244f4f894cdfd31b15c4aedd13'), " .
